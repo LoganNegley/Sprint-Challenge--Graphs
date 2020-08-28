@@ -48,12 +48,20 @@ path = []
 visited_rooms = {}
 opposite = {'n': 's', 'e':'w', 's': 'n', 'w': 'e'}
 
-# Starting in room 0------only exit is north
+
+# Starting in room 0------only exit is north small map
 # print(player.current_room.get_exits())
 
 visited_rooms[player.current_room.id] = player.current_room.get_exits()
 
-while len(visited_rooms) < len(room_graph) -1:
+while len(visited_rooms) < len(room_graph) -1: #if we haven't been to all rooms---keep going
+    if player.current_room.id not in visited_rooms: # if current is not in visited
+        visited_rooms[player.current_room.id] = player.current_room.get_exits()  #add current to visited
+        #add last room in to our path at end
+
+print(visited_rooms[player.current_room.id])
+
+print('hello')
 
 
 
