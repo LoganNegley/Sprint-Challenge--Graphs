@@ -33,11 +33,41 @@ player = Player(world.starting_room)
 # traversal_path = ['n', 'n']
 
 
+
+
+
+
+
 ################################### My Code Below Line#################
 
 traversal_path = []
 path = []
 visited_rooms = {}
+
+print(player.current_room.get_exits())
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 ################### My code above this line##################
