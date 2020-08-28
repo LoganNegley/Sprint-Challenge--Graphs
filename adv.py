@@ -44,7 +44,11 @@ traversal_path = []
 path = []
 visited_rooms = {}
 
-print(player.current_room.get_exits())
+# Starting in room 0------only exit is north
+# print(player.current_room.get_exits())
+
+visited_rooms[player.current_room.id] = player.current_room.get_exits()
+
 
 
 
