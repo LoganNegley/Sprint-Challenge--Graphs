@@ -34,7 +34,10 @@ player = Player(world.starting_room)
 
 
 
-
+# loop through graph until every room has been visited
+# start with current room
+# if not in visited add that room to visited
+# prev room added to path
 
 
 
@@ -43,11 +46,17 @@ player = Player(world.starting_room)
 traversal_path = []
 path = []
 visited_rooms = {}
+opposite = {'n': 's', 'e':'w', 's': 'n', 'w': 'e'}
 
 # Starting in room 0------only exit is north
 # print(player.current_room.get_exits())
 
 visited_rooms[player.current_room.id] = player.current_room.get_exits()
+
+while len(visited_rooms) < len(room_graph) -1:
+
+
+
 
 
 
