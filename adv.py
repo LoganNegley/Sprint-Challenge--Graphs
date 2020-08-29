@@ -59,7 +59,8 @@ while len(visited_rooms) < len(room_graph) -1: #if we haven't been to all rooms-
         visited_rooms[player.current_room.id] = player.current_room.get_exits()  #add current to visited
         previous = path[-1] #add last room in to our path at end
         visited_rooms[player.current_room.id].remove(previous)
-
+    while len(visited_rooms[player.current_room.id]) < 1: #while theres rooms in visited
+        
 
 
 
