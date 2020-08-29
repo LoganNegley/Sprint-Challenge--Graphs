@@ -14,11 +14,11 @@ world = World()
 
 
 # You may uncomment the smaller graphs for development and testing purposes.
-map_file = "maps/test_line.txt"
+# map_file = "maps/test_line.txt"
 # map_file = "maps/test_cross.txt"
 # map_file = "maps/test_loop.txt"
 # map_file = "maps/test_loop_fork.txt"
-# map_file = "maps/main_maze.txt"
+map_file = "maps/main_maze.txt"
 
 # Loads the map into a dictionary
 room_graph=literal_eval(open(map_file, "r").read())
@@ -61,8 +61,12 @@ while len(visited_rooms) < len(room_graph) -1: #if we haven't been to all rooms-
         visited_rooms[player.current_room.id].remove(previous)
     while len(visited_rooms[player.current_room.id]) < 1: #while theres rooms in visited
         previous = path.pop()  #take from prev and add to traversal
-        traversal_path.append(previous)
-        player.travel(previous)
+        traversal_path.append(previous)# add to traversal path
+        player.travel(previous) #go back to prev
+    move = visited_rooms[player.current_room.id].pop()
+    traversal_path.append(move) #add next room to traversal
+    path.append(opposite[move]) 
+    player.travel(move) #move player
 
 
 
