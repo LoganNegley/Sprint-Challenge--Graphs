@@ -60,7 +60,9 @@ while len(visited_rooms) < len(room_graph) -1: #if we haven't been to all rooms-
         previous = path[-1] #add last room in to our path at end
         visited_rooms[player.current_room.id].remove(previous)
     while len(visited_rooms[player.current_room.id]) < 1: #while theres rooms in visited
-        
+        previous = path.pop()  #take from prev and add to traversal
+        traversal_path.append(previous)
+        player.travel(previous)
 
 
 
